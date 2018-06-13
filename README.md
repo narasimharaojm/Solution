@@ -7,6 +7,8 @@ Backend
 
 1. Navigate to the folder
 2. npm start
+
+
 Here I have implemented two collections visitors and votes in MongoDB(created account in mlabs).
 
 Main Functionality:
