@@ -1,0 +1,24 @@
+.imagePic{
+    height:250px;
+    width:250px;
+    float:left;
+}
+.sprite{
+    background: url('../images/thumbs-up.svg') -18px -0;
+    background-repeat: initial;
+    height:20px;
+    width:21px;
+}
+.sprite:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}
+.heading{
+    color: tomato;
+    font-weight: "lighter";
+    font-size: 40px;
+    font-family: Helvetica;
+}
+.item{
+    margin-top:100px;
+}

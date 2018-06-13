@@ -1,0 +1,36 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "backend of g2 crowd roster page",
+  "main": "App.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Narasimha Rao Jasti Madhu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "*",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "formidable": "^1.1.1",
+    "jsonwebtoken": "^8.0.1",
+    "mongodb": "*",
+    "mongoose": "^5.0.13",
+    "nodemon": "^1.17.5",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-jwt": "^3.0.0",
+    "passport-local": "*",
+    "uuid": "^3.2.1"
+  }
+}
