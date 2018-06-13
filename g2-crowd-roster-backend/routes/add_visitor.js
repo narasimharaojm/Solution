@@ -12,7 +12,7 @@ router.post('/visitor',(req,res,next)=>{
     });
 
     Visitor.getvisitor(visitor,(err,data)=>{
-       // console.log("reached");
+       
         if(err){
             res.json({success:false,msg:'did not find visitor'})
         }
@@ -23,14 +23,13 @@ router.post('/visitor',(req,res,next)=>{
                        res.json({success:false,msg:err})
                    }
                    else{
-                      // res.json({success:true,msg:"added"});
-                      console.log("okay adding")
+                      
                        Votes.increment(visitor.name,(err,data)=>{
                         if(err){
                             res.json({success:false,msg:err})
                         }
                         else{
-                            console.log('ok added adn incremented')
+                            
                             res.json({success:true,msg:'incremented'})
                         }
                         
@@ -50,12 +49,12 @@ router.post('/visitor',(req,res,next)=>{
                               
                                 if(data.likes>0){
                                     Votes.decrement(visitor.name,(err,data)=>{
-                                        console.log("ok deleting")
+                                        
                                         if(err){
                                             res.json({success:false,msg:err})
                                         }
                                         else{
-                                            console.log('ok deleted')
+                                           
                                             res.json({success:true,msg:'decremented'});
                                         }
                                         
@@ -82,13 +81,13 @@ router.get('/votes',(req,res,next)=>{
                 likes:JSON.parse(element).votes
             });
             Votes.getname(vote,(err,data)=>{
-                // console.log("reached")
+                
                  if(err){
                      res.json({success:false,msg:'err'})
                  }
                  else{
                      if(data ===null){
-                         console.log("adding to db00");
+                         
                          Votes.addname(vote,(err,resp)=>{
                              if(err){
                                  res.json({success:false,msg:'err'})
@@ -128,8 +127,7 @@ router.get('/getallvotes',(req,res,next)=>{
 
 });
 router.get('/findbyname',(req,res,next)=>{
-    console.log("dude..")
-    console.log(req.query.name);
+    
     Votes.findbyname(req.query.name,(err,info)=>{
         if(err){
             res.json({success:false, msg:err})

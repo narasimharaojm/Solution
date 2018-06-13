@@ -33,13 +33,13 @@ class App extends Component{
         axios.get("https://api.myjson.com/bins/16roa3").then((data)=>{
 
             var arr = [];
-            if(data.length===undefined){//remove this
+            if(data.length===undefined){
                
                 arr.push(data.data);
                 this.setState({data:arr});
                 
 
-                axios.get("http://localhost:8080/process/votes",{params:{info:arr}}).then((resp)=>{//modify to data.data
+                axios.get("http://localhost:8080/process/votes",{params:{info:arr}}).then((resp)=>{
                
             });
                 
@@ -47,8 +47,8 @@ class App extends Component{
             }
             else{
                 this.setState({data:data.data});
-                console.log('multi');
-                axios.get("http://localhost:8080/process/votes",{params:{info:data.data}}).then((resp)=>{//modify to data.data
+                
+                axios.get("http://localhost:8080/process/votes",{params:{info:data.data}}).then((resp)=>{
             });
         }
 
@@ -56,9 +56,9 @@ class App extends Component{
         axios.get("http://localhost:8080/process/getallvotes").then((res)=>{
            res.data.msg.forEach(element => {
                currState.findIndex((item)=>{
-                  // console.log(item);
+                  
                    if(item.name === element.name){
-                      // console.log(item.name + " "+ item.votes +"-> "+element.likes);
+                      
                        item.votes = element.likes;
                    }
                });
@@ -70,8 +70,7 @@ class App extends Component{
     }
     handleLike(name){
         axios.post("http://localhost:8080/process/visitor",{visitor: ls.get('uuid'),name: name}).then((resp)=>{
-            console.log('cliecked')
-            console.log(resp);
+            
             var stt = this.state.data;
             if(resp.data.msg==="incremented"){
                 stt.findIndex((item)=>{
